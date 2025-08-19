@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxy3hj05ywl76"]
+
+[ext_resource type="Script" uid="uid://c6s7mjgq28ut7" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://d0qawd60aua1m" path="res://Scripts/camera_rig.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bjoo88lv1ew4p" path="res://Scripts/spell_caster.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell.gd" id="4_fkybt"]
+[ext_resource type="Resource" uid="uid://bg2jnh8vp3sec" path="res://Resources/DamageSpell.tres" id="5_fkybt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
+albedo_color = Color(0.335053, 0.478695, 0.936, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v0iea"]
+radius = 0.25
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999962, 0, 0.00872654, 0, 1, 0, -0.00872654, 0, 0.999962, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_f60y1")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+height = 1.0
+material = SubResource("StandardMaterial3D_v0iea")
+
+[node name="CameraRig" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+top_level = true
+shape = SubResource("SphereShape3D_v0iea")
+spring_length = 2.0
+script = ExtResource("1_v0iea")
+mouse_sensitivity = 0.25
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.996456, 0.0841126, 0, -0.0841126, 0.996456, 0, 0, 2)
+
+[node name="SpellCaster" type="Node" parent="."]
+script = ExtResource("3_6t5aa")
+spells = Array[ExtResource("4_fkybt")]([ExtResource("5_fkybt")])
+
+[node name="Node3D" type="Node3D" parent="."]

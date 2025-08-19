@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bg2jnh8vp3sec"]
+
+[ext_resource type="Script" uid="uid://bu87lxn4hgh50" path="res://Scripts/spell_effect.gd" id="1_w73a5"]
+[ext_resource type="Resource" uid="uid://dp5f2tafb6iuc" path="res://Resources/DamageEffect.tres" id="2_tfa6r"]
+[ext_resource type="Script" uid="uid://crouimou0fnlj" path="res://Scripts/damage_spell.gd" id="3_lindg"]
+
+[resource]
+script = ExtResource("3_lindg")
+effects = Array[ExtResource("1_w73a5")]([ExtResource("2_tfa6r")])
+metadata/_custom_type_script = "uid://ltryve3tdqx4"
