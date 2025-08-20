@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://ct43uqqicu0vk"]
+
+[ext_resource type="Script" uid="uid://bu87lxn4hgh50" path="res://Scripts/Spell Scripts/Spell Effects/spell_effect.gd" id="1_10mda"]
+[ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell Scripts/spell.gd" id="2_0kgan"]
+[ext_resource type="Resource" uid="uid://cwsk8xxf41jbw" path="res://Resources/FireballProjectile.tres" id="2_5aykp"]
+[ext_resource type="Resource" uid="uid://dp5f2tafb6iuc" path="res://Resources/DamageEffect.tres" id="3_t70hg"]
+
+[resource]
+script = ExtResource("2_0kgan")
+effects = Array[ExtResource("1_10mda")]([ExtResource("2_5aykp"), ExtResource("3_t70hg")])
+metadata/_custom_type_script = "uid://ltryve3tdqx4"

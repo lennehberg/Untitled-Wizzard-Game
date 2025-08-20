@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProjectileEffect" load_steps=5 format=3 uid="uid://cwsk8xxf41jbw"]
+
+[ext_resource type="Script" uid="uid://c84vple1gtvbe" path="res://Scripts/Spell Scripts/Spell Effects/projectile_effect.gd" id="1_6oket"]
+[ext_resource type="PackedScene" uid="uid://cd24lg0wcqssn" path="res://Scenes/projectile.tscn" id="1_xx8di"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_53yjf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k6bu8"]
+
+[resource]
+script = ExtResource("1_6oket")
+projectile_scene = ExtResource("1_xx8di")
+speed = 20.0
+travel_range = 100.0
+projectile_mesh = SubResource("SphereMesh_53yjf")
+projectile_shape = SubResource("SphereShape3D_k6bu8")
+metadata/_custom_type_script = "uid://c84vple1gtvbe"

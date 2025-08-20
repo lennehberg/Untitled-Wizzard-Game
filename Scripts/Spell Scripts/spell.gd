@@ -6,6 +6,7 @@ class_name Spell
 
 func build_context(caster: CharacterBody3D) -> Dictionary:
 	var context = {
-		"caster" : caster
+		"caster" : caster,
+		"target" : null
 	}
 	return context

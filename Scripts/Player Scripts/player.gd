@@ -16,14 +16,15 @@ var direction : Vector3
 func _physics_process(delta: float) -> void:
 	# on cast_spell input, tell spellcaster to cast spell
 	if Input.is_action_just_pressed("cast_spell"):
-		print("trying to cast spell!")
+		#print("trying to cast spell!")
+		print("player position ", global_position)
 		spell_caster.cast()
 	# set the velocity and the direction the player is facing
 	_set_velocity_direction(delta)
 	# move the player in the direction and velocity
 	move_and_slide()
 	# rotate the body to the direction of movement
-	turn_to(direction)
+	turn_to()
 	
 	
 	
@@ -53,7 +54,7 @@ func _set_velocity_direction(delta: float) -> void:
 		
 		
 # turn the character model to the direction it is moving
-func turn_to(direction: Vector3) -> void:
+func turn_to() -> void:
 	if direction.length() > 0:
 		var yaw := atan2(-direction.x, -direction.z)
 		yaw = lerp_angle(rotation.y, yaw, ROTATION_SPEED)

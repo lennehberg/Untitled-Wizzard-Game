@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxy3hj05ywl76"]
 
-[ext_resource type="Script" uid="uid://c6s7mjgq28ut7" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://d0qawd60aua1m" path="res://Scripts/camera_rig.gd" id="1_v0iea"]
-[ext_resource type="Script" uid="uid://bjoo88lv1ew4p" path="res://Scripts/spell_caster.gd" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell.gd" id="4_fkybt"]
-[ext_resource type="Resource" uid="uid://bg2jnh8vp3sec" path="res://Resources/DamageSpell.tres" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://c6s7mjgq28ut7" path="res://Scripts/Player Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://d0qawd60aua1m" path="res://Scripts/Player Scripts/camera_rig.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bjoo88lv1ew4p" path="res://Scripts/Spell Scripts/spell_caster.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell Scripts/spell.gd" id="4_fkybt"]
+[ext_resource type="Resource" uid="uid://ct43uqqicu0vk" path="res://Resources/Fireball.tres" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 
