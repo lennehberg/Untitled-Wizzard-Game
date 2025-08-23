@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bu87lxn4hgh50" path="res://Scripts/Spell Scripts/Spell Effects/spell_effect.gd" id="1_10mda"]
 [ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell Scripts/spell.gd" id="2_0kgan"]
-[ext_resource type="Resource" uid="uid://cwsk8xxf41jbw" path="res://Resources/FireballProjectile.tres" id="2_5aykp"]
-[ext_resource type="Resource" uid="uid://dp5f2tafb6iuc" path="res://Resources/DamageEffect.tres" id="3_t70hg"]
+[ext_resource type="Resource" uid="uid://cwsk8xxf41jbw" path="res://Resources/Spell Resources/FireboltProjectile.tres" id="2_5aykp"]
+[ext_resource type="Resource" uid="uid://dp5f2tafb6iuc" path="res://Resources/Spell Resources/DamageEffect.tres" id="3_t70hg"]
 
 [resource]
 script = ExtResource("2_0kgan")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FreelookState" load_steps=2 format=3 uid="uid://kuske6ohfr2b"]
+
+[ext_resource type="Script" uid="uid://3ovdng8an8oc" path="res://Scripts/Player Scripts/Camera Scripts/camera_freelook_state.gd" id="1_rjumq"]
+
+[resource]
+script = ExtResource("1_rjumq")
+spring_length = 1.5
+mouse_sensitivity = 0.5
+arm_height = 1.2
+x_offset = -0.5
+metadata/_custom_type_script = "uid://3ovdng8an8oc"

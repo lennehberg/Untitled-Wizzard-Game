@@ -9,22 +9,40 @@ const ROTATION_SPEED = .25
 @onready var spell_caster : Node = $SpellCaster
 @export var player_health : int = 100
 
-
+var rotate_with_camera : bool = false
 var direction : Vector3
 
 
 func _physics_process(delta: float) -> void:
-	# on cast_spell input, tell spellcaster to cast spell
-	if Input.is_action_just_pressed("cast_spell"):
-		#print("trying to cast spell!")
-		print("player position ", global_position)
-		spell_caster.cast()
 	# set the velocity and the direction the player is facing
 	_set_velocity_direction(delta)
+	
+	if Input.is_action_just_pressed("switch_ready_state"):
+		if not rotate_with_camera:
+			rotate_with_camera = true
+		else:
+			rotate_with_camera = false
+			
+		
+	# on cast_spell input, rotate to camera and tell spellcaster to cast spell
+	if rotate_with_camera:
+		# Get the camera's forward direction, but ignore any vertical tilt.
+		var cam_forward = -camera.global_transform.basis.z
+		#cam_forward.y = 0
+		
+		# Create a target position in front of the player based on the camera's direction.
+		var look_at_position = global_position + cam_forward
+		
+		# Instantly rotate the player to look at that target.
+		look_at(look_at_position)
+		if Input.is_action_just_pressed("cast_spell"):
+			spell_caster.cast()
+	
+		# Only rotate the body to the direction of movement if not casting.
+	turn_to()
+
 	# move the player in the direction and velocity
 	move_and_slide()
-	# rotate the body to the direction of movement
-	turn_to()
 	
 	
 	

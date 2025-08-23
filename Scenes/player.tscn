@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxy3hj05ywl76"]
+[gd_scene load_steps=12 format=3 uid="uid://cxy3hj05ywl76"]
 
 [ext_resource type="Script" uid="uid://c6s7mjgq28ut7" path="res://Scripts/Player Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://d0qawd60aua1m" path="res://Scripts/Player Scripts/camera_rig.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bjdqwtrnchqx7" path="res://Scripts/Player Scripts/Camera Scripts/camera_rig_controller.gd" id="2_fkybt"]
+[ext_resource type="Script" uid="uid://dulcumge7q3s2" path="res://Scripts/Resource Scripts/state.gd" id="3_3smsa"]
 [ext_resource type="Script" uid="uid://bjoo88lv1ew4p" path="res://Scripts/Spell Scripts/spell_caster.gd" id="3_6t5aa"]
+[ext_resource type="Resource" uid="uid://depm5vhyu3jmu" path="res://Resources/Camera Resources/CameraExplorationState.tres" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://ltryve3tdqx4" path="res://Scripts/Spell Scripts/spell.gd" id="4_fkybt"]
-[ext_resource type="Resource" uid="uid://ct43uqqicu0vk" path="res://Resources/Fireball.tres" id="5_fkybt"]
+[ext_resource type="Resource" uid="uid://kuske6ohfr2b" path="res://Resources/Camera Resources/CameraFreelookState.tres" id="5_8erm5"]
+[ext_resource type="Resource" uid="uid://ct43uqqicu0vk" path="res://Resources/Spell Resources/Firebolt.tres" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+height = 1.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
 albedo_color = Color(0.335053, 0.478695, 0.936, 1)
@@ -18,7 +22,7 @@ radius = 0.25
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.999962, 0, 0.00872654, 0, 1, 0, -0.00872654, 0, 0.999962, 0, 1, 0)
+transform = Transform3D(0.999962, 0, 0.00872654, 0, 1, 0, -0.00872654, 0, 0.999962, 0, 0.625, 0)
 shape = SubResource("CapsuleShape3D_f60y1")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
@@ -31,8 +35,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 top_level = true
 shape = SubResource("SphereShape3D_v0iea")
 spring_length = 2.0
-script = ExtResource("1_v0iea")
-mouse_sensitivity = 0.25
+script = ExtResource("2_fkybt")
+states = Array[ExtResource("3_3smsa")]([ExtResource("4_8erm5"), ExtResource("5_8erm5")])
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
 transform = Transform3D(1, 0, 0, 0, 0.996456, 0.0841126, 0, -0.0841126, 0.996456, 0, 0, 2)
@@ -42,3 +46,6 @@ script = ExtResource("3_6t5aa")
 spells = Array[ExtResource("4_fkybt")]([ExtResource("5_fkybt")])
 
 [node name="Node3D" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+visible = false

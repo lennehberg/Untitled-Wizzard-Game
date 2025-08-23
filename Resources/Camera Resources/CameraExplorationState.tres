@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExplorationState" load_steps=2 format=3 uid="uid://depm5vhyu3jmu"]
+
+[ext_resource type="Script" uid="uid://d0qawd60aua1m" path="res://Scripts/Player Scripts/Camera Scripts/camera_explore_state.gd" id="1_e2lfa"]
+
+[resource]
+script = ExtResource("1_e2lfa")
+spring_length = 2.0
+mouse_sensitivity = 0.5
+arm_height = 0.5
+metadata/_custom_type_script = "uid://dulcumge7q3s2"
