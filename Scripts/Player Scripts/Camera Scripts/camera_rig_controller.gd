@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	cur_state.on_physics_process(delta)
 	
 	
-func _switch_states(new_state: int):
+func _switch_state(new_state: int):
 	# value safety
 	if new_state < 0 or new_state >= states.size():
 		return 
@@ -51,21 +51,36 @@ func _switch_states(new_state: int):
 	cur_state_ind = new_state
 	# start new state
 	cur_state.on_enter()
-	print(global_position)
+	#print(global_position)
 	
 	
 func _input(event: InputEvent) -> void:
 	# check for state change
-	if event.is_action_pressed("switch_ready_state"):
-		print("switching states to...")
-		# exploration -> freelook, freelook / lock-on -> exploration
-		if cur_state_ind == EXPLORE:
-			print("freelook")
-			_switch_states(FREELOOK)
-		else:
-			print("explore")
-			_switch_states(EXPLORE)
+	var is_ready_input = event.is_action_pressed("switch_ready_state")
+	var is_lock_input = event.is_action_pressed("switch_lock_on_state")
+	match cur_state_ind:
+		# if player is in explore mode, switch to given mode
+		EXPLORE:
+			if is_ready_input:
+				_switch_state(FREELOOK)
+			elif is_lock_input:
+				_switch_state(LOCK_ON)
+		# if player is in freelook
+		FREELOOK:
+			# if input is freelook again, switch back to explore
+			if is_ready_input: 
+				_switch_state(EXPLORE) 
+			elif is_lock_input:
+				_switch_state(LOCK_ON)
+		# if player is in lock-on
+		LOCK_ON:
+			# switch to freelook on input
+			if is_ready_input:
+				_switch_state(FREELOOK)
+			elif is_lock_input:
+				_switch_state(EXPLORE)
 		
 	
 	if cur_state:
 		cur_state.on_input(event)
+			

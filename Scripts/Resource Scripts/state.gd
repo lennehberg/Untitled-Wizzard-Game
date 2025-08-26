@@ -3,7 +3,7 @@ class_name State
 
 
 # runs once to set up variables for state
-func on_init(camera_controller: CameraController):
+func on_init(init_obj):
 	pass
 
 

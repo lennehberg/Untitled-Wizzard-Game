@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerExploreState" load_steps=2 format=3 uid="uid://ctv2rrmb685vq"]
+
+[ext_resource type="Script" uid="uid://b3u8xq07vpd02" path="res://Scripts/Player Scripts/player_explore_state.gd" id="1_vncvr"]
+
+[resource]
+script = ExtResource("1_vncvr")
+player_health = 100
+metadata/_custom_type_script = "uid://b3u8xq07vpd02"

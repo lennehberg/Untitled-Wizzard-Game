@@ -16,7 +16,7 @@ var mouse_capture : bool = true
 var rig : CameraController
 
 
-func on_init(camera_controller: CameraController):
+func on_init(camera_controller):
 	rig = camera_controller
 	camera = rig.camera
 	player = rig.player
@@ -28,6 +28,8 @@ func on_enter() -> void:
 	rig.spring_length = spring_length
 	# set the mouse mode to be captured by window
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# disable the aim dot
+	player.aim_dot.visible = false
 
 
 # rotate arm based on mouse input

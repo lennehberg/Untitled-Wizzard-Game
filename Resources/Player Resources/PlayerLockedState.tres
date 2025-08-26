@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerLockedState" load_steps=2 format=3 uid="uid://bp5c0pcts4hi2"]
+
+[ext_resource type="Script" uid="uid://ka63oduop17r" path="res://Scripts/Player Scripts/player_locked_state.gd" id="1_1mkjs"]
+
+[resource]
+script = ExtResource("1_1mkjs")
+player_health = 100
+metadata/_custom_type_script = "uid://ka63oduop17r"

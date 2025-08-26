@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_rjumq")
-spring_length = 1.5
+spring_length = 1.75
 mouse_sensitivity = 0.5
-arm_height = 1.2
-x_offset = -0.5
+arm_height = 1.4
+x_offset = 0.5
 metadata/_custom_type_script = "uid://3ovdng8an8oc"

@@ -7,7 +7,9 @@ const ROTATION_SPEED = .25
 
 @onready var camera : Camera3D = $CameraRig/Camera3D
 @onready var spell_caster : Node = $SpellCaster
+
 @export var player_health : int = 100
+@export var aim_dot : ColorRect
 
 var rotate_with_camera : bool = false
 var direction : Vector3
@@ -38,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("cast_spell"):
 			spell_caster.cast()
 	
-		# Only rotate the body to the direction of movement if not casting.
+	# Only rotate the body to the direction of movement if not casting.
 	turn_to()
 
 	# move the player in the direction and velocity

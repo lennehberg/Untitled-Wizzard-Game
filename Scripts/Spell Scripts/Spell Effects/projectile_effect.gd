@@ -4,7 +4,8 @@
 extends SpellEffect
 class_name ProjectileEffect
 
-const HEIGHT_OFFSET = 0.75
+const HEIGHT_OFFSET = 1
+const HORIZONTAL_OFFSET = -0.5
 
 ## The scene for the projectile to be spawned (must have a Projectile.gd script).
 @export var projectile_scene: PackedScene
@@ -32,9 +33,10 @@ func execute(context: Dictionary) -> void:
 	# --- 2. Instantiate and position the projectile ---
 	var projectile: Area3D = projectile_scene.instantiate()
 	
-	# Get the caster's current position and orientation.
-	var spawn_transform = caster.global_transform
-	spawn_transform.origin.y += HEIGHT_OFFSET
+	# Get the caster's camera current position and orientation.
+	var spawn_transform = caster.camera.global_transform
+	#spawn_transform.origin.y += HEIGHT_OFFSET
+	#spawn_transform.origin.z += HORIZONTAL_OFFSET
 	projectile.global_transform = spawn_transform
 	
 

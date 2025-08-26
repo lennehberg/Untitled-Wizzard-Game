@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LockedOnState" load_steps=2 format=3 uid="uid://bt2oi3amwb37l"]
+
+[ext_resource type="Script" uid="uid://cwnwmhr6e8tt3" path="res://Scripts/Player Scripts/Camera Scripts/camera_lockedon_state.gd" id="1_fmxp1"]
+
+[resource]
+script = ExtResource("1_fmxp1")
+spring_length = 1.5
+mouse_sensitivity = 0.5
+arm_height = 0.65
+x_offset = -0.5
+metadata/_custom_type_script = "uid://cwnwmhr6e8tt3"
